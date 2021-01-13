@@ -1,7 +1,7 @@
 package se.mattec.geocaching
 
 fun main(args: Array<String>) {
-    val boxes = GC43E62_Kattjakten.boxes()
+    val boxes = boxes()
     val openBoxIndices = boxes
             .mapIndexed { index, open -> if (open) index else 0 }
             .filter { it != 0 }
@@ -18,21 +18,16 @@ fun main(args: Array<String>) {
     println("E 17° 53.$yyy")
 }
 
-object GC43E62_Kattjakten {
+private fun boxes(): Array<Boolean> {
+    val boxes = Array(49) { true }
 
-    fun boxes(): Array<Boolean> {
-        val boxes = Array(49) { true }
-
-        for (iteration in 2 until 49) {
-            for (boxIndex in 0 until 49) {
-                if (boxIndex % iteration == 0) {
-                    boxes[boxIndex] = !boxes[boxIndex]
-                }
+    for (iteration in 2 until 49) {
+        for (boxIndex in 0 until 49) {
+            if (boxIndex % iteration == 0) {
+                boxes[boxIndex] = !boxes[boxIndex]
             }
         }
-
-        return boxes
     }
 
-
+    return boxes
 }

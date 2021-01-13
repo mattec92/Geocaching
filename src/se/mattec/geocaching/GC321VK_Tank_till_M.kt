@@ -20,7 +20,7 @@ fun factorial(n: Int): Long {
     return fact
 }
 
-fun getWXYZ(): Int {
+private fun getWXYZ(): Int {
     for (a in 1..9) {
         for (b in 0..9) {
             for (c in 1..9) {
