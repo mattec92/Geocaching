@@ -3,13 +3,13 @@ package se.mattec.geocaching
 fun main() {
     var aaa = 0
     var bbb = 0
-    var x = 3
+    var x = 1
     while (aaa < 1000 && bbb < 1000) {
-        aaa = fibonacci(13) + fibonacci(11) + fibonacci(x + 1)
-        bbb = fibonacci(10) + fibonacci(x - 2) - fibonacci(4)
+        aaa = fibonacci(15) + fibonacci(x) - 39
+        bbb = fibonacci(13) - 20
+        println("aaa=$aaa, bbb=$bbb x=$x")
+        // Second to last was correct (x=14)
         x++
-        println("aaa=$aaa, bbb=$bbb")
-        // Second to last was correct
     }
 }
 
